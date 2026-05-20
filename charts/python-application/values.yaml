@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: public.ecr.aws/r1j8z0t4/idp/python-application
   pullPolicy: IfNotPresent
-  tag: 543cd5
+  tag: ebc5c4
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
