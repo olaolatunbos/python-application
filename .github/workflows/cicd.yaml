@@ -49,7 +49,7 @@ jobs:
         run: |
           echo ${{needs.ci.outputs.commit_id}}
           pip install yq
-          yq -Yi '.image.tag = "${{needs.ci.outputs.commit_id}}"' charts/python-application/values-${{values.app_env}}.yaml
+          yq -Yi '.image.tag = "${{needs.ci.outputs.commit_id}}"' charts/python-application/values.yaml
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
@@ -84,9 +84,9 @@ jobs:
           argocd app get python-application || argocd app create python-application \
             --repo $repo \
             --path charts/python-application \
-            --dest-namespace ${{values.app_env}} \
+            --dest-namespace prod \
             --dest-server https://kubernetes.default.svc \
-            --values values-${{values.app_env}}.yaml \
+            --values values.yaml \
             --revision master \
             --sync-policy manual \
             --sync-option CreateNamespace=true
