@@ -4,8 +4,8 @@ variable "repository_name" {
   default     = "python-application"
 }
 
-resource "aws_ecr_public_repository" "python_application" {
-  repository_name = "idp/${var.repository_name}"
+resource "aws_ecrpublic_repository" "python_application" {
+  repository_name = var.repository_name
 
   catalog_data {
     description = "Python app that displays time"
@@ -14,5 +14,5 @@ resource "aws_ecr_public_repository" "python_application" {
 
 output "repository_name" {
   description = "The name of the ECR public repository"
-  value       = aws_ecr_public_repository.python_application.repository_name
+  value       = aws_ecrpublic_repository.python_application.repository_name
 }
