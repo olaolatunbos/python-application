@@ -5,7 +5,7 @@ variable "repository_name" {
 }
 
 resource "aws_ecrpublic_repository" "python_application" {
-  repository_name = var.repository_name
+  repository_name = "idp/${var.repository_name}"
 
   catalog_data {
     description = "Python app that displays time"
