@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: python-app
-        image: public.ecr.aws/r1j8z0t4/idp/python-application
+        image: public.ecr.aws/r1j8z0t4/idp/python-application:latest
         ports:
         - containerPort: 5000

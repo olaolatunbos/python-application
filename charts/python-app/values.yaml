@@ -1,6 +1,6 @@
 replicaCount: 1
 image:
-  repository: public.ecr.aws/r1j8z0t4/idp/python-application
+  repository: public.ecr.aws/r1j8z0t4/idp/python-application:latest
   pullPolicy: IfNotPresent
   tag: ed7159
 imagePullSecrets: []
